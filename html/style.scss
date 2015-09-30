@@ -72,15 +72,18 @@ h1, h2, h3, h4, h5, h6, h7 {
     display: block;
     margin: 0 auto;
     box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    padding: 0.5cm;
 }
 
 @media all {
+    /* disable the page-break in non-print media. */
     .page-break { display: none; }
 }
 
 @media print {
     .page-A4 {
         margin: 0;
+        padding: 0;
         box-shadow: none;
         border: 0;
         outline: 0;
