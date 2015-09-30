@@ -40,7 +40,7 @@ html, body {
 }
 
 body {
-    font-family: LatinRoman, Lato, Tahoma, Verdana;
+    font-family: LatinRoman, 'Open Sans', Tahoma, Verdana;
     color: #000000;
     background-color: #f0f0f0;
 }
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 /****************************** LISTS ***********************/
 
 .cv-content-item {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .cv-content-item p {
