@@ -2,16 +2,19 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Lambros Petrou - CV | Resume</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lambros Petrou - CV | Resume</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,800,400italic,800italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.scss">
 </head>
 
 <body>
 
-<header class="">
-    <h1 id="cv-h-name">Lambros Petrou <span id="cv-h-url">www.lambrospetrou.com</span></h1>
-    <section id="cv-h-loc">London, UK</section>
-    <section>lambrospetrou@gmail.com</section>
+<header id="cv-h">
+    <h1 id="cv-h-name">Lambros Petrou</h1>
+    <section id="cv-h-url"><a href="http://www.lambrospetrou.com">www.lambrospetrou.com</a></section>
+    <section id="cv-h-email">lambrospetrou@gmail.com</section>
 </header>
 
 <section class="cv-content">
@@ -110,9 +113,103 @@
 
     
     <article>
+        <h2>Education</h2>
 
-    </article> <!-- 
+        <section class="cv-content-item cv-edu-section">
+            <header>
+                <h3>University of Oxford</h3>
+                <div class="edu-loc">Oxford, UK</div>
+                <div class="edu-time time">
+                    <time datetime="2014-09" class="start">Sep 2014</time> &mdash; <time datetime="2015-09">Sep 2015</time>
+                </div>
+            </header>
+            <ul>
+                <li><p>Master of Science in Computer Science</p></li>
+                <li><p><em>Coursework</em>: Concurrent Algorithms &amp; Data Structures (Scala), Computer Security, Functional Programming (Haskell), Concurrent Programming (Scala), Database Systems Implementation, Theory of Data and Knowledge Bases</p></li>
+            </ul>
+        </section>
 
+        <section class="cv-content-item cv-edu-section">
+            <header>
+                <h3>University of Cyprus, UCY</h3>
+                <div class="edu-loc">Nicosia, Cyprus</div>
+                <div class="edu-time time">
+                    <time datetime="2010-09" class="start">Sep 2010</time> &mdash; <time datetime="2014-06">Jun 2014</time>
+                </div>
+            </header>
+            <ul>
+                <li><p>Bachelor of Science in Computer Science, GPA: 9.41 /10 (Ranked 1st of class)</p></li>
+                <li><p><em>Coursework (only selected courses)</em>: Databases, Data Structures and Algorithms, Algorithms and Complexity, Distributed Algorithms, Parallel Algorithms, Computer Architecture, Systems Programming, Parallel Processing, Internet Technologies, Computer Networks, Data mining in the Web</p></li>
+            </ul>
+        </section>
+
+        <section class="cv-content-item cv-edu-section">
+            <header>
+                <h3>Ecole Polytechnique Federale de Lausanne, EPFL</h3>
+                <div class="edu-loc">Lausanne, Switzerland</div>
+                <div class="edu-time time">
+                    <time datetime="2013-09" class="start">Sep 2013</time> &mdash; <time datetime="2014-01">Jan 2014</time>
+                </div>
+            </header>
+            <ul>
+                <li><p>Erasmus Student for ONE (1) semester, Department of Computer Science</p></li>
+                <li><p><em>Coursework</em>: Software Engineering, Concurrent Algorithms, TCP/IP Networking, Program parallelization on PC clusters (MPI, OpenMP, DPS)</p></li>
+            </ul>
+        </section>
+
+    </article> <!-- END OF EDUCATION -->
+
+
+    <article>
+        <h2>Other Technical Experience</h2>
+
+        <section class="cv-content-item cv-other-section">
+            <strong>Projects</strong>
+            <ul>
+                <li><p>Personal Website (2008 – Present): Personal website and blog (https://www.lambrospetrou.com)</p></li>
+                <li><p>ACM SIGMOD 2015 Programming Contest: Implemented a database management system that evaluated thousands of validation requests each with a set of Boolean Conjunctive Queries (extended with mathematical and logical operators)  against a constantly modified database (http://db.in.tum.de/sigmod15contest/leaders.html)</p></li>
+                <li><p>ACM SIGMOD 2014 Programming Contest: Implemented a social network analysis system that responded to numerous Top-K queries (http://www.cs.albany.edu/~sigmod14contest/leaders.html)</p></li>
+                <li><p>ACM SIGMOD 2013 Programming Contest: Implemented a high-throughput streaming document filtering system using a dynamic set of exact and approximate continuous keyword match (http://sigmod.kaust.edu.sa/leaderboard.html)</p></li>
+            </ul>
+        </section>
+
+    </article> <!-- END OF OTHER TECHNICAL EXPERIENCE -->
+    
+    <article>
+        <h2>Awards &amp; Achievements</h2>
+
+        <section class="cv-content-item cv-awards-section">
+            <ul>
+                <li><p>Nominated for one of the few HEFCE scholarships for graduate studies at University of Oxford, UK (Fall 2014)</p></li>
+                <li><p>Nominated for a Fulbright Student Scholarship for graduate studies in USA (Fall 2014)</p></li>
+                <li><p>ACM SIGMOD 2015 Programming Contest, ranked 1st nationwide (Cyprus &amp; UK) and 5th worldwide among 38 teams. Selected as one of the finalists to present our solution in ACM SIGMOD conference in Melbourne, Australia</p></li>
+                <li><p>ACM SIGMOD 2014 Programming Contest, ranked 1st nationwide and 9th worldwide among 33 teams</p></li>
+                <li><p>ACM SIGMOD 2013 Programming Contest, ranked 1st nationwide and 10th worldwide among 55 teams</p></li>
+                <li><p>Graduated Saint George Lyceum - Lakatameia, Nicosia, Cyprus, with excellence award (2005-2008) – GPA: 19.67 /20</p></li>
+                <li><p>Promoted to Second Lieutenant of Infantry during my two years of obligatory army service (2008-2010)</p></li>
+            </ul>
+        </section>
+    </article> <!-- END OF AWARDS -->
+
+    <article>
+        <h2>Languages &amp; Technologies</h2>
+        <section class="cv-content-item cv-skills-section">
+            <ul>
+                <li><p><em>Programming / Web / SDKs</em>: C, C++, Java, Scala, Google Go, Google Dart, HTML5, CSS, Javascript (jQuery, jQueryUI, jQuery Mobile), Google AngularJS + AngularDart, Android SDK, Hadoop framework</p></li>
+                <li><p><em>Databases</em>: Microsoft SQL Server, NoSQL Couchbase Server, MongoDB, MySQL</p></li>
+                <li><p><em>Tools/ IDEs</em>: VIM, Visual Studio, Eclipse, Intellij IDEA, PHP Storm, WebStorm, Unity3D</p></li>
+            </ul>
+        </section>
+    </article> <!-- END OF SKILLS -->
+
+    <article>
+        <h2>Interests</h2>
+        <section class="cv-content-item cv-skills-section">
+            <ul>
+                <li><p>Have been playing volleyball for 10 years, being captain for five of them and having won the national championship once at 2006.</p></li>
+                <li><p>Did Karate (Shotokan) lessons for 8 years, where I developed self-control and the ability to remain calm in obnoxious situations.</p></li>
+        </section>
+    </article> <!-- END OF HOBBIES -->
 
 </section>
 
