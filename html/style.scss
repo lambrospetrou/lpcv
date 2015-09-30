@@ -226,4 +226,10 @@ h1, h2, h3, h4, h5, h6, h7 {
     text-align: right;
 }
 
+/****************** OTHER SECTIONS WITH JUST LISTS *****************/
+
+.cv-other-section li, .cv-awards-section li, 
+.cv-skills-section li, .cv-interests-section li {
+    margin-bottom: 0.3em;
+}
 
