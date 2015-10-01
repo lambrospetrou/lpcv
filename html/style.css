@@ -122,6 +122,29 @@ h1, h2, h3, h4, h5, h6, h7 {
     margin: 0;
 }
 
+.cv-content-item header {
+    position: relative;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+    align-items: center;
+
+    font-weight: bold;
+
+    margin: 0;
+    margin-bottom: 0.3em;
+    padding: 0;
+}
+@media (max-width: 600px) and handheld {
+    .cv-content-item header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction:column;
+        align-items: center;
+    } 
+}
 
 /****************************** PERSONAL INFORMATION ********/
 #cv-h {
@@ -155,22 +178,6 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 /****************************** WORK EXPERIENCE *************/
 
-.cv-work-section header {
-    position: relative;
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
-    flex-direction:row;
-    align-items: center;
-
-    font-weight: bold;
-
-    margin: 0;
-    margin-bottom: 0.3em;
-    padding: 0;
-}
-
 .cv-work-section h3 {
     order: 2;
     flex: 4;
@@ -189,24 +196,7 @@ h1, h2, h3, h4, h5, h6, h7 {
     text-align: right;
 }
 
-
 /****************************** EDUCATION *************/
-
-.cv-edu-section header {
-    position: relative;
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
-    flex-direction:row;
-    align-items: center;
-
-    font-weight: bold;
-
-    margin: 0;
-    margin-bottom: 0.3em;
-    padding: 0;
-}
 
 .cv-edu-section h3 {
     order: 2;
