@@ -126,6 +126,21 @@ h1, h2, h3, h4, h5, h6, h7 {
     visibility: hidden;
 }
 
+/************************** Download PDF ****************/
+#dl-pdf {
+    padding: 15px;
+    color: #920000;
+    text-align: center;
+}
+
+#dl-pdf a, #dl-pdf a:link, #dl-pdf a:hover, #dl-pdf a:focus {
+    color: #920000;
+}
+@media print {
+    #dl-pdf {
+        display: none;
+    }
+}
 /*************************** A4 PAGE ********************/
 
 .page-A4 {
