@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 /************************** Download PDF ****************/
 #dl-pdf {
+    width: 100%;
     padding: 15px;
     color: #920000;
     text-align: center;
@@ -213,7 +214,16 @@ h1, h2, h3, h4, h5, h6, h7 {
     margin-bottom: 0.3em;
     padding: 0;
 }
-@media (max-width: 600px) and handheld {
+@media only screen and (max-width: 600px) {
+    .page-A4 {
+        width: 100%;
+        box-shadow: none;
+        padding: 1em;
+        margin: 0;
+        border: 0;
+        border-top: 2px solid rgba(0,0,0,0.5);
+    }
+
     .cv-content-item header {
         display: flex;
         justify-content: space-between;
@@ -230,6 +240,11 @@ h1, h2, h3, h4, h5, h6, h7 {
     margin: 0;
     margin-bottom: 1em;
     padding: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+    align-items: center;
 }
 
 #cv-h h1 {
@@ -246,6 +261,26 @@ h1, h2, h3, h4, h5, h6, h7 {
 #cv-h-email {
     order: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    #cv-h {
+        display: flex;
+        justify-content: space-between;
+        flex-direction:column;
+        align-items: center;
+    } 
+#cv-h h1 {
+    order: 1;
+}   
+#cv-h-url {
+    order: 3;
+}
+#cv-h-email {
+    order: 2;
+}
+}
+
+/****************************** PERSONAL INFORMATION ********/
 
 .cv-content article h2 {
     border-bottom: 1px solid #920000;
