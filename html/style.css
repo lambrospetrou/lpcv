@@ -108,8 +108,6 @@ body {
 
 * {
     font-size: 13px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -128,7 +126,6 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 /************************** Download PDF ****************/
 #dl-pdf {
-    width: 100%;
     padding: 15px;
     color: #920000;
     text-align: center;
@@ -145,6 +142,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 /*************************** A4 PAGE ********************/
 
 .page-A4 {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     background: white;
     width: 21cm;
     /*height: 29.7cm;*/
@@ -152,6 +151,9 @@ h1, h2, h3, h4, h5, h6, h7 {
     margin: 0 auto;
     box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
     padding: 0.5cm 1cm;
+    /*word-break: break-all;*/
+    word-wrap: break-word;
+    overflow-wrap: break-word
 }
 
 @media all {
@@ -159,6 +161,7 @@ h1, h2, h3, h4, h5, h6, h7 {
     .page-break { display: none; }
 }
 
+/* disable box-shadow in print layout */
 @media print {
     .page-A4 {
         margin: 0;
@@ -269,15 +272,15 @@ h1, h2, h3, h4, h5, h6, h7 {
         flex-direction:column;
         align-items: center;
     } 
-#cv-h h1 {
-    order: 1;
-}   
-#cv-h-url {
-    order: 3;
-}
-#cv-h-email {
-    order: 2;
-}
+	#cv-h h1 {
+	    order: 1;
+	}   
+	#cv-h-url {
+	    order: 3;
+	}
+	#cv-h-email {
+	    order: 2;
+	}
 }
 
 /****************************** PERSONAL INFORMATION ********/
