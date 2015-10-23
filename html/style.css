@@ -93,6 +93,7 @@ body {
     font-family: lmroman10, lmroman12, Tahoma, Verdana, serif;
     color: #000000;
     background-color: #f0f0f0;
+    padding-bottom: 40px;
 }
 * {
     font-size: 13px;
