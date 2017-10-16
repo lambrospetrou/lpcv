@@ -52,11 +52,9 @@ h1, h2, h3, h4, h5, h6, h7 {
     line-height: 100%;
 }
 .clear:after {
-    content: ".";
-    display: block;
-    height: 0;
+    content: "";
+    display: table;
     clear: both;
-    visibility: hidden;
 }
 
 /************************** Download PDF ****************/
