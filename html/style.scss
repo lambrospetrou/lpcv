@@ -1,15 +1,3 @@
-/*
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-}
-*/
-
 /**** THIS IS TO SUPPORT VIEWPORT IN ALL BROWSERS */
 
 @-o-viewport {
@@ -52,9 +40,9 @@ h1, h2, h3, h4, h5, h6, h7 {
     line-height: 100%;
 }
 .clear:after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
 }
 
 /************************** Download PDF ****************/
@@ -114,22 +102,9 @@ h1, h2, h3, h4, h5, h6, h7 {
 /****************************** HEADER CENTERING ************/
 
 .container-h {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -151,22 +126,9 @@ h1, h2, h3, h4, h5, h6, h7 {
 .cv-content-item header {
     position: relative;
     width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     font-weight: bold;
     margin: 0;
@@ -182,43 +144,21 @@ h1, h2, h3, h4, h5, h6, h7 {
     margin: 0;
     margin-bottom: 1em;
     padding: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 #cv-h h1 {
     margin: 0;
     font-size: 2em;
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
     order: 2;
     text-align: center;
 }
 #cv-h-url {
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
     order: 3;
 }
 #cv-h-email {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
 }
 
@@ -232,37 +172,17 @@ h1, h2, h3, h4, h5, h6, h7 {
 /****************************** WORK EXPERIENCE *************/
 
 .cv-work-section h3 {
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
     order: 2;
-    -webkit-box-flex: 4;
-    -webkit-flex: 4;
-    -ms-flex: 4;
     flex: 4;
     text-align: center;
 }
 .cv-work-section .work-title {
-    /*    float: left;*/
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
     flex: 2;
     text-align: left;
 }
 .cv-work-section .work-time {
-    /*    float: right;*/
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
     order: 3;
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
     flex: 2;
     text-align: right;
 }
@@ -270,36 +190,17 @@ h1, h2, h3, h4, h5, h6, h7 {
 /****************************** EDUCATION *************/
 
 .cv-edu-section h3 {
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
     order: 2;
-    -webkit-box-flex: 4;
-    -webkit-flex: 4;
-    -ms-flex: 4;
     flex: 4;
     text-align: center;
 }
 .cv-edu-section .edu-loc {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
     flex: 2;
     text-align: left;
 }
 .cv-edu-section .edu-time {
-    /*    float: right;*/
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
     order: 3;
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
     flex: 2;
     text-align: right;
 }
@@ -322,59 +223,24 @@ h1, h2, h3, h4, h5, h6, h7 {
         border-top: 2px solid rgba(0, 0, 0, 0.5);
     }
     .cv-content-item header {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
         justify-content: space-between;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
         align-items: center;
     }
     #cv-h {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
         justify-content: space-between;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
         align-items: center;
     }
     #cv-h h1 {
-        -webkit-box-ordinal-group: 2;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
         order: 1;
     }
     #cv-h-url {
-        -webkit-box-ordinal-group: 4;
-        -webkit-order: 3;
-        -ms-flex-order: 3;
         order: 3;
     }
     #cv-h-email {
-        -webkit-box-ordinal-group: 3;
-        -webkit-order: 2;
-        -ms-flex-order: 2;
         order: 2;
     }
 }

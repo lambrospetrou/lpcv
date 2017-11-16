@@ -1,0 +1,24 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preserve": "npm run release",
+    "serve": "serve -p 8080 build",
+    "sass": "./node_modules/node-sass/bin/node-sass style.scss -o ./ --output-style compressed",
+    "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers \"> 1%\" ./style.css -o ./style.css --no-map.inline",
+    "build-css": "npm run sass && npm run autoprefixer",
+    "build": "npm run build-css",
+    "release": "npm run build && rm -rf build && mkdir build && cp index.html cv.pdf style.css build/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "node-sass": "^4.6.1",
+    "postcss-cli": "^4.1.1",
+    "serve": "^6.4.1"
+  }
+}
