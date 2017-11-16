@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "serve": "serve -p 8080 build",
-    "sass": "./node_modules/node-sass/bin/node-sass style.scss -o ./ --output-style compressed",
-    "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers \"> 1%\" ./style.css -o ./style.css --no-map.inline",
-    "build-css": "npm run sass && npm run autoprefixer",
-    "build-pdf": "node build-tools/generate-pdf.js",
-    "build": "npm run build-css && npm run build-pdf",
-    "release": "npm run build && rm -rf build && mkdir build && cp index.html cv.pdf style.css build/"
+    "sass": "./node_modules/node-sass/bin/node-sass style.scss --output-style compressed",
+    "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers '> 1%' -o ./build/style.css --no-map.inline",
+    "build-css": "npm run sass | npm run autoprefixer",
+    "prebuild": "rm -rf build && mkdir -p build",
+    "build": "npm run build-css",
+    "postbuild": "npm run copy-static",
+    "copy-static": "cp index.html build/",
+    "generate-pdf": "node build-tools/generate-pdf.js",
+    "release": "npm run build",
+    "postrelease": "npm run generate-pdf && mv cv.pdf build/"
   },
   "keywords": [],
   "author": "",
