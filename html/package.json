@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preserve": "npm run release",
     "serve": "serve -p 8080 build",
     "sass": "./node_modules/node-sass/bin/node-sass style.scss -o ./ --output-style compressed",
     "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers \"> 1%\" ./style.css -o ./style.css --no-map.inline",
     "build-css": "npm run sass && npm run autoprefixer",
-    "build": "npm run build-css",
+    "build-pdf": "node build-tools/generate-pdf.js",
+    "build": "npm run build-css && npm run build-pdf",
     "release": "npm run build && rm -rf build && mkdir build && cp index.html cv.pdf style.css build/"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "autoprefixer": "^7.1.6",
     "node-sass": "^4.6.1",
     "postcss-cli": "^4.1.1",
+    "puppeteer": "^0.13.0",
     "serve": "^6.4.1"
   }
 }
