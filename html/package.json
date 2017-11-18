@@ -1,24 +1,21 @@
 {
-  "name": "html",
+  "name": "lpcv-html",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "serve": "serve -p 8080 build",
-    "sass": "./node_modules/node-sass/bin/node-sass style.scss --output-style compressed",
-    "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers '> 1%' -o ./build/style.css --no-map.inline",
+    "start": "serve -p 8080 build",
+    "sass": "./node_modules/node-sass/bin/node-sass src/style.scss --output-style compressed",
+    "autoprefixer": "./node_modules/postcss-cli/bin/postcss --use autoprefixer --autoprefixer.browsers '> 1%' -o build/style.css --no-map",
     "build-css": "npm run sass | npm run autoprefixer",
     "prebuild": "rm -rf build && mkdir -p build",
     "build": "npm run build-css",
     "postbuild": "npm run copy-static",
-    "copy-static": "cp index.html build/",
-    "generate-pdf": "node build-tools/generate-pdf.js",
+    "copy-static": "cp src/index.html build/",
+    "generate-pdf": "[ -d './build' ] && node build-tools/generate-pdf.js",
     "release": "npm run build",
-    "postrelease": "npm run generate-pdf && mv cv.pdf build/"
+    "postrelease": "npm run generate-pdf"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Lambros Petrou",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "node-sass": "^4.6.1",
