@@ -10,7 +10,7 @@
     "build": "npm run build-css",
     "postbuild": "npm run copy-static",
     "copy-static": "cp src/index.html build/",
-    "generate-pdf": "[ -d './build' ] && node build-tools/generate-pdf.js",
+    "generate-pdf": "[ -d './build' ] && node build-tool/generate-pdf.js",
     "release": "npm run build",
     "postrelease": "npm run generate-pdf"
   },
