@@ -18,7 +18,7 @@
   "author": "Lambros Petrou",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
-    "node-sass": "^4.6.1",
+    "node-sass": "^4.9.3",
     "postcss-cli": "^4.1.1",
     "puppeteer": "^0.13.0",
     "serve": "^6.4.1"
