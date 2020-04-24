@@ -12,12 +12,14 @@
     "copy-static": "cp src/index.html build/",
     "generate-pdf": "[ -d './build' ] && node build-tool/generate-pdf.js",
     "release": "npm run build",
-    "postrelease": "npm run generate-pdf"
+    "postrelease": "npm run generate-pdf",
+    "watch": "nodemon --watch src -e html,js,scss --exec make"
   },
   "keywords": [],
   "author": "Lambros Petrou",
   "devDependencies": {
     "autoprefixer": "^9.7.6",
+    "nodemon": "^2.0.3",
     "postcss-cli": "^7.1.0",
     "puppeteer": "^3.0.1",
     "sass": "^1.26.5",
