@@ -16,12 +16,15 @@ server.listen(12345)
 
 console.info('Generating PDF...');
 
-setTimeout(() => generatePdf(server), 1000);
+setTimeout(() => { try { generatePdf(server) } catch (e) { console.error(e); } }, 1000);
 
 /// Do the PDF printing!
 
 async function generatePdf(server) {
-    const browser = await puppeteer.launch();
+    // WSL on Windows fails to create a sandbox... 
+    // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+    // https://github.com/loteoo/hyperstatic/pull/20/files 
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process']});
     const page = await browser.newPage();
     await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle2'});
     await page.pdf({
@@ -35,8 +38,8 @@ async function generatePdf(server) {
         }
     });
 
-    browser.close();
+    await browser.close();
 
     // Close the server hosting the CV
-    server.close();
+    await server.close();
 }
