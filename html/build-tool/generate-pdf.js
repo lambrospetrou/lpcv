@@ -1,4 +1,4 @@
-const playwright = require('playwright');
+const {chromium} = require('playwright');
 const puppeteer = require('puppeteer');
 const handler = require('serve-handler');
 const http = require('http');
@@ -53,26 +53,22 @@ async function generatePdf() {
 }
 
 async function generatePdfPlaywright() {
-    // TODO Fix the firefox and webkit arguments for WSL.
-    for (const browserType of ['chromium', /*'firefox', 'webkit'*/]) {
-        // WSL on Windows fails to create a sandbox... 
-        // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
-        // https://github.com/loteoo/hyperstatic/pull/20/files 
-        const browserArgs = browserType === 'chromium' ? {args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process']} : {};
-        const browser = await playwright[browserType].launch(browserArgs);
-        const ctx = await browser.newContext();
-        const page = await ctx.newPage();
-        await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle'});
-        await page.pdf({
-            path: path.join(WS_BUILD, `cv-${browserType}.pdf`), 
-            format: 'A4',
-            margin: {
-                top: '0.39in',
-                left: '0.39in',
-                right: '0.38in',
-                bottom: '0.38in'
-            }
-        });
-        await browser.close();
-    }
+    // WSL on Windows fails to create a sandbox... 
+    // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+    // https://github.com/loteoo/hyperstatic/pull/20/files 
+    const browser = await chromium.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process']});
+    const ctx = await browser.newContext();
+    const page = await ctx.newPage();
+    await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle'});
+    await page.pdf({
+        path: path.join(WS_BUILD, `cv-playwright.pdf`), 
+        format: 'A4',
+        margin: {
+            top: '0.39in',
+            left: '0.39in',
+            right: '0.38in',
+            bottom: '0.38in'
+        }
+    });
+    await browser.close();
 }
