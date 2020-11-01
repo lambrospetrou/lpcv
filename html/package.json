@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npx serve -p 8080 build",
-    "sass": "npx sass src/style.scss --style compressed",
-    "autoprefixer": "npx postcss --use autoprefixer --autoprefixer.browsers '> 1%' -o build/style.css --no-map",
-    "build-css": "npm run sass | npm run autoprefixer",
+    "sass": "npx sass src/style.scss --style compressed /tmp/lpcv.css",
+    "autoprefixer": "npx postcss /tmp/lpcv.css --use autoprefixer --autoprefixer.browsers '> 1%' -o build/style.css --no-map",
+    "build-css": "npm run sass && npm run autoprefixer",
     "prebuild": "rm -rf build && mkdir -p build",
     "build": "npm run build-css",
     "postbuild": "npm run copy-static",
