@@ -20,8 +20,8 @@ setTimeout((async () => {
     try {
         console.info('Generating PDF using Puppeteer...');
         await generatePdf();
-        console.info('Generating PDF using Playwright...');
-        await generatePdfPlaywright();
+        // console.info('Generating PDF using Playwright...');
+        // await generatePdfPlaywright();
         console.info('Generated all PDFs.')
         
         server.close();
