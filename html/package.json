@@ -20,11 +20,11 @@
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "nodemon": "^2.0.3",
-    "playwright": "^1.0.2",
+    "playwright": "^1.26.1",
     "postcss-cli": "^7.1.0",
-    "puppeteer": "^3.0.1",
+    "puppeteer": "^3.3.0",
     "sass": "^1.26.5",
-    "serve": "^11.3.0",
+    "serve": "^14.0.1",
     "serve-handler": "^6.1.2"
   }
 }
