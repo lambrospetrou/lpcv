@@ -18,11 +18,11 @@
   "keywords": [],
   "author": "Lambros Petrou",
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^10.4.16",
     "nodemon": "^2.0.3",
     "playwright": "^1.26.1",
-    "postcss-cli": "^7.1.0",
-    "puppeteer": "^3.3.0",
+    "postcss-cli": "^10.1.0",
+    "puppeteer": "^21.5.0",
     "sass": "^1.26.5",
     "serve": "^14.0.1",
     "serve-handler": "^6.1.2"
