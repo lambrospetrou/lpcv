@@ -35,7 +35,7 @@ async function generatePdf() {
     // WSL on Windows fails to create a sandbox... 
     // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
     // https://github.com/loteoo/hyperstatic/pull/20/files 
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process']});
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process', /*'--font-render-hinting=medium'*/ '--font-render-hinting=none']});
     const page = await browser.newPage();
     await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle2'});
     await page.pdf({
