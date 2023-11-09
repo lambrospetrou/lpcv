@@ -19,6 +19,7 @@ html, body {
     border: 0;
     outline: 0;
     font-size: 100%;
+    font-size: 15px;
     vertical-align: baseline;
     background: transparent;
 }
@@ -26,18 +27,19 @@ html, body {
 /*************************************************/
 
 body {
-    font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    // font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', '-apple-system', 'Avenir Next', 'Avenir', 'BlinkMacSystemFont', 'Segoe Ui', 'Helvetica Neue', Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif;
     color: #000000;
     background-color: #f0f0f0;
     padding-bottom: 40px;
 }
 * {
-    font-size: 14px;
     padding: 0;
     margin: 0;
 }
 h1, h2, h3, h4, h5, h6, h7 {
     line-height: 100%;
+    font-size: 1rem;
 }
 .clear:after {
     clear: both;
@@ -49,11 +51,11 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 #dl-pdf {
     padding: 15px;
-    color: #920000;
+    color: #990000;
     text-align: center;
 }
 #dl-pdf a, #dl-pdf a:link, #dl-pdf a:hover, #dl-pdf a:focus {
-    color: #920000;
+    color: #990000;
 }
 @media print {
     #dl-pdf {
@@ -66,7 +68,12 @@ h1, h2, h3, h4, h5, h6, h7 {
 .page-A4 {
     box-sizing: border-box;
     background: white;
+    // https://www.a4-size.com/a4-size-in-pixels/?size=a4&unit=px&ppi=150
+    // The required resolution for an A4-sized image is 794 x 1123 pixels at 96 ppi (pixels per inch).
     width: 21cm;
+    // width: 95%;
+    // max-width: 21cm;
+    
     /*height: 29.7cm;*/
     display: block;
     margin: 0 auto;
@@ -109,19 +116,40 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 /****************************** LISTS ***********************/
-
 .cv-content-item {
-    margin-bottom: 0.5em;
+    margin-bottom: 15px;
 }
 .cv-content-item p {
     margin: 0;
     padding: 0;
 }
 .cv-content-item ul {
-    list-style-position: outside;
-    padding: 0;
-    padding-left: 2em;
     margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    list-style-position: outside;
+}
+.cv-content-item.cv-work-section ul {
+    margin-bottom: 10px;
+
+    // padding-left: 0px;
+    list-style-type: none;
+
+    padding-left: 15px;
+    list-style-type: disclosure-closed;
+    ::marker {
+        color: #990000;
+    }
+    ul {
+        ::marker {
+            color: #000;
+        }
+        padding-left: 15px;
+        list-style-type: disc;
+        ul {
+            list-style-type: circle;
+        }
+    }
 }
 .cv-content-item header {
     position: relative;
@@ -130,10 +158,30 @@ h1, h2, h3, h4, h5, h6, h7 {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 0.3em;
+    // font-weight: bold;
+    font-weight: thin;
+    color: #990000;
+    // margin: 0;
+    margin-bottom: 5px;
     padding: 0;
+
+    h3 {
+        // font-weight: lighter;
+        font-weight: inherit;
+        font-size: 1.25rem;
+    }
+
+    // h3::before {
+    //     content: "➤";
+    //     color: #990000;
+    //     margin-right: 5px;
+    // }
+    // h3::after {
+    //     content: "❂";
+    //     // content: "▶";
+    //     color: #990000;
+    //     margin-right: 3px;
+    // }
 }
 
 /****************************** PERSONAL INFORMATION ********/
@@ -151,7 +199,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 #cv-h h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2rem;
     order: 2;
     text-align: center;
 }
@@ -165,44 +213,52 @@ h1, h2, h3, h4, h5, h6, h7 {
 /****************************** GENERIC ********/
 
 .cv-content article h2 {
-    border-bottom: 1px solid #920000;
-    padding-bottom: 0.5em;
+    border-bottom: 1px solid #990000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /****************************** WORK EXPERIENCE *************/
 
 .cv-work-section h3 {
-    order: 2;
-    flex: 4;
-    text-align: center;
-}
-.cv-work-section .work-title {
     order: 1;
-    flex: 2;
+    flex: 1;
     text-align: left;
 }
+// .cv-work-section .work-title {
+//     order: 1;
+//     flex: 2;
+//     text-align: left;
+// }
 .cv-work-section .work-time {
-    order: 3;
-    flex: 2;
+    order: 2;
+    // flex: 2;
     text-align: right;
+    font-size: small;
+}
+
+.work-team-name {
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /****************************** EDUCATION *************/
 
 .cv-edu-section h3 {
-    order: 2;
-    flex: 4;
-    text-align: center;
-}
-.cv-edu-section .edu-loc {
     order: 1;
-    flex: 2;
+    flex: 1;
     text-align: left;
 }
+// .cv-edu-section .edu-loc {
+//     order: 1;
+//     flex: 2;
+//     text-align: left;
+// }
 .cv-edu-section .edu-time {
-    order: 3;
-    flex: 2;
+    order: 2;
+    // flex: 2;
     text-align: right;
+    font-size: small;
 }
 
 /****************** OTHER SECTIONS WITH JUST LISTS *****************/
@@ -217,7 +273,7 @@ h1, h2, h3, h4, h5, h6, h7 {
     .page-A4 {
         width: 100%;
         box-shadow: none;
-        padding: 1em;
+        padding: 10px;
         margin: 0;
         border: 0;
         border-top: 2px solid rgba(0, 0, 0, 0.5);
