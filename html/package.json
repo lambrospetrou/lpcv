@@ -2,7 +2,7 @@
   "name": "lpcv-html",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx serve -p 8080 build",
+    "start": "npx serve -p 9090 build",
     "sass": "npx sass src/style.scss --style compressed /tmp/lpcv.css",
     "autoprefixer": "npx postcss /tmp/lpcv.css --use autoprefixer --autoprefixer.browsers '> 1%' -o build/style.css --no-map",
     "build-css": "npm run sass && npm run autoprefixer",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "nodemon": "^2.0.3",
-    "playwright": "^1.26.1",
+    "playwright": "^1.39.0",
     "postcss-cli": "^10.1.0",
     "puppeteer": "^21.5.0",
     "sass": "^1.26.5",

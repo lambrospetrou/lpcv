@@ -18,12 +18,12 @@ server.listen(12345)
 // Delay for 1 second until the server starts.
 setTimeout((async () => { 
     try {
-        console.info('Generating PDF using Puppeteer...');
-        await generatePdf();
-        // console.info('Generating PDF using Playwright...');
-        // await generatePdfPlaywright();
+        // console.info('Generating PDF using Puppeteer...');
+        // await generatePdf();
+        console.info('Generating PDF using Playwright...');
+        await generatePdfPlaywright();
         console.info('Generated all PDFs.')
-        
+
         server.close();
         process.exit(0);
     } catch (e) {
@@ -56,12 +56,12 @@ async function generatePdfPlaywright() {
     // WSL on Windows fails to create a sandbox... 
     // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
     // https://github.com/loteoo/hyperstatic/pull/20/files 
-    const browser = await chromium.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process']});
+    const browser = await chromium.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process', '--font-render-hinting=none']});
     const ctx = await browser.newContext();
     const page = await ctx.newPage();
     await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle'});
     await page.pdf({
-        path: path.join(WS_BUILD, `cv-playwright.pdf`), 
+        path: path.join(WS_BUILD, `cv.pdf`), 
         format: 'A4',
         margin: {
             top: '0.39in',
