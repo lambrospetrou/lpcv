@@ -1,5 +1,5 @@
 const {chromium} = require('playwright');
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 const handler = require('serve-handler');
 const http = require('http');
 const path = require('path');
@@ -31,26 +31,26 @@ setTimeout((async () => {
     }
 }), 1000);
 
-async function generatePdf() {
-    // WSL on Windows fails to create a sandbox... 
-    // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
-    // https://github.com/loteoo/hyperstatic/pull/20/files 
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process', /*'--font-render-hinting=medium'*/ '--font-render-hinting=none']});
-    const page = await browser.newPage();
-    await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle2'});
-    await page.pdf({
-        path: path.join(WS_BUILD, 'cv.pdf'), 
-        format: 'A4',
-        margin: {
-            top: '0.39in',
-            left: '0.39in',
-            right: '0.38in',
-            bottom: '0.38in'
-        }
-    });
+// async function generatePdf() {
+//     // WSL on Windows fails to create a sandbox... 
+//     // https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+//     // https://github.com/loteoo/hyperstatic/pull/20/files 
+//     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process', /*'--font-render-hinting=medium'*/ '--font-render-hinting=none']});
+//     const page = await browser.newPage();
+//     await page.goto('http://127.0.0.1:12345', {waitUntil: 'networkidle2'});
+//     await page.pdf({
+//         path: path.join(WS_BUILD, 'cv.pdf'), 
+//         format: 'A4',
+//         margin: {
+//             top: '0.39in',
+//             left: '0.39in',
+//             right: '0.38in',
+//             bottom: '0.38in'
+//         }
+//     });
 
-    await browser.close();
-}
+//     await browser.close();
+// }
 
 async function generatePdfPlaywright() {
     // WSL on Windows fails to create a sandbox... 
